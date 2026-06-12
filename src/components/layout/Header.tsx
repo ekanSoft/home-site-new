@@ -1,12 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
-import {
-  CloseButton,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from '@headlessui/react'
+import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../../config/site'
 import { headerCta, navItems } from '../../data/nav'
 import { ChevronDownIcon, MenuIcon } from '../common/icons'
@@ -15,7 +8,11 @@ import { MobileNav } from './MobileNav'
 
 function Brand() {
   return (
-    <Link to="/" className="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
+    <Link
+      to="/"
+      className="flex items-center gap-2.5"
+      aria-label={`${siteConfig.name} home`}
+    >
       <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-base font-bold text-white">
         e
       </span>
@@ -26,10 +23,9 @@ function Brand() {
   )
 }
 
-/** Base pathname a dropdown's children live under, used for active state. */
-function dropdownBasePath(hrefs: string[]) {
-  const first = hrefs[0] ?? '/'
-  return first.split('#')[0] || '/'
+function isActivePath(currentPath: string, href: string) {
+  const path = href.split('#')[0] || '/'
+  return path === '/' ? currentPath === '/' : currentPath.startsWith(path)
 }
 
 export function Header() {
@@ -37,88 +33,84 @@ export function Header() {
   const location = useLocation()
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
-      <nav
-        aria-label="Main"
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8"
-      >
+    <header className="sticky top-0 z-40 border-b border-transparent bg-white/90 py-3 backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <div className="flex lg:flex-1">
           <Brand />
         </div>
 
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-heading"
-          >
-            <span className="sr-only">Open main menu</span>
-            <MenuIcon className="size-6" />
-          </button>
-        </div>
-
-        <PopoverGroup className="hidden lg:flex lg:gap-x-8">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center rounded-full border border-border bg-white px-2 py-2 shadow-sm lg:flex"
+        >
           {navItems.map((item) =>
             item.children ? (
-              <Popover key={item.label} className="relative">
-                {(() => {
-                  const basePath = dropdownBasePath(item.children.map((c) => c.href))
-                  const isActive = location.pathname === basePath
-                  return (
-                    <PopoverButton
-                      className={`flex items-center gap-x-1 text-sm/6 font-semibold outline-none transition-colors hover:text-brand focus-visible:text-brand ${
-                        isActive ? 'text-brand' : 'text-heading'
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDownIcon className="size-4 flex-none text-muted" />
-                    </PopoverButton>
-                  )
-                })()}
-
-                <PopoverPanel
-                  transition
-                  className="absolute left-1/2 z-10 mt-3 w-80 -translate-x-1/2 overflow-hidden rounded-2xl bg-surface shadow-lg ring-1 ring-border transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
-                >
-                  <div className="p-2">
+              <details className="group relative" key={item.label}>
+                <summary className="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-4 text-sm font-semibold text-heading transition hover:bg-surface-soft [&::-webkit-details-marker]:hidden">
+                  {item.label}
+                  <ChevronDownIcon className="size-4 transition group-open:rotate-180" />
+                </summary>
+                <div className="absolute left-1/2 top-full z-20 mt-3 w-[28rem] -translate-x-1/2 rounded-lg border border-border bg-white p-3 shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+                  <div className="space-y-1">
                     {item.children.map((child) => (
-                      <CloseButton
-                        as={Link}
+                      <Link
                         key={child.href}
                         to={child.href}
-                        className="group block rounded-xl p-3 transition-colors hover:bg-surface-soft"
+                        className={`grid grid-cols-[2.5rem_1fr] gap-3 rounded-lg p-3 transition ${
+                          isActivePath(location.pathname, child.href)
+                            ? 'bg-brand-soft'
+                            : 'hover:bg-surface-soft'
+                        }`}
                       >
-                        <p className="text-sm font-semibold text-heading group-hover:text-brand">
-                          {child.label}
-                        </p>
-                        {child.description ? (
-                          <p className="mt-0.5 text-sm text-muted">{child.description}</p>
-                        ) : null}
-                      </CloseButton>
+                        <span className="grid size-10 place-items-center rounded-lg bg-surface-soft text-sm font-semibold text-brand-dark">
+                          {child.label.slice(0, 1)}
+                        </span>
+                        <span>
+                          <span className="block text-sm font-semibold text-heading">
+                            {child.label}
+                          </span>
+                          {child.description ? (
+                            <span className="mt-1 block text-sm leading-5 text-muted">
+                              {child.description}
+                            </span>
+                          ) : null}
+                        </span>
+                      </Link>
                     ))}
                   </div>
-                </PopoverPanel>
-              </Popover>
+                </div>
+              </details>
             ) : (
-              <NavLink
+              <Link
                 key={item.label}
                 to={item.href ?? '/'}
-                className={({ isActive }) =>
-                  `text-sm/6 font-semibold transition-colors hover:text-brand ${
-                    isActive ? 'text-brand' : 'text-heading'
-                  }`
-                }
+                className={`flex min-h-10 items-center rounded-full px-4 text-sm font-semibold transition ${
+                  item.href && isActivePath(location.pathname, item.href)
+                    ? 'bg-brand-soft text-brand-dark'
+                    : 'text-heading hover:bg-surface-soft'
+                }`}
               >
                 {item.label}
-              </NavLink>
+              </Link>
             ),
           )}
-        </PopoverGroup>
+        </nav>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button to={headerCta.href}>{headerCta.label}</Button>
+          <Button to={headerCta.href} className="min-h-11 px-5">
+            {headerCta.label}
+          </Button>
         </div>
-      </nav>
+
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(true)}
+          className="grid size-11 place-items-center rounded-full border border-border bg-white text-heading shadow-sm lg:hidden"
+        >
+          <span className="sr-only">Open main menu</span>
+          <MenuIcon className="size-5" />
+        </button>
+      </div>
 
       <MobileNav open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>

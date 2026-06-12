@@ -55,4 +55,4 @@ export const navItems: NavItem[] = [
   { label: 'Contact', href: '/contact' },
 ]
 
-export const headerCta = { label: 'Start a project', href: '/contact' }
+export const headerCta = { label: 'Get in touch', href: '/contact' }
