@@ -1,0 +1,30 @@
+/*
+ * ekansoft theme tokens.
+ *
+ * This is the single source of truth for brand colors. Changing
+ * --color-brand (and friends) here updates the entire site, because
+ * components only use semantic Tailwind utilities such as bg-brand,
+ * text-heading, text-muted, border-border, bg-surface-soft, etc.
+ */
+@theme {
+  --color-brand: #0e7490;
+  --color-brand-dark: #155e75;
+  --color-brand-soft: #e0f2fe;
+  --color-accent: #14b8a6;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8fafc;
+  --color-heading: #0f172a;
+  --color-muted: #475569;
+  --color-border: #e2e8f0;
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
