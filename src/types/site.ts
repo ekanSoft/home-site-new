@@ -1,6 +1,6 @@
 export type ServiceSlug =
-  | 'custom-web-applications'
-  | 'business-websites-ecommerce'
+  | 'custom-business-applications'
+  | 'ecommerce'
   | 'backend-api-development'
   | 'mobile-app-development'
   | 'ai-chatbots-voice-agents'
@@ -13,6 +13,7 @@ export type Service = {
   slug: ServiceSlug
   title: string
   shortTitle: string
+  homeSummary?: string
   summary: string
   details: string[]
   icon: ServiceIconName

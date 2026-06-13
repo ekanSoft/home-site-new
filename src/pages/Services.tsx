@@ -11,32 +11,32 @@ const aiHighlights = [
   {
     title: 'Customer support & sales bots',
     description:
-      'Chatbots that answer real questions, qualify leads, and hand off to a human when it matters.',
+      'Chatbots that answer common questions, collect useful details, qualify leads, and reduce repetitive support work.',
   },
   {
     title: 'Voice agents & call flows',
     description:
-      'Voice systems that handle calls naturally — booking, routing, and resolving without long hold times.',
+      'Voice systems for booking, routing, follow-ups, and routine calls, with escalation when a person needs to step in.',
   },
   {
-    title: 'LLM agents with guardrails',
+    title: 'AI agents with guardrails',
     description:
-      'Production-grade agents built on OpenAI and Anthropic models, with structured outputs and safe fallbacks.',
+      'AI assistants built with clear limits, structured outputs, business rules, and safe fallback paths.',
   },
   {
     title: 'Human handoff workflows',
     description:
-      'Escalation paths that keep your team in control, with full conversation context carried over.',
+      'Escalation flows that give your team the conversation history and context needed to take over smoothly.',
   },
 ]
 
 const capabilities = [
-  'Architecture design and system reviews',
-  'API-first development with clear documentation',
-  'Queues, caching, and background processing',
-  'CI/CD pipelines and containerized deployments',
-  'Payment, wallet, and logistics integrations',
-  'Monitoring, logging, and production support',
+  'Architecture planning and system reviews',
+  'API design and integration planning',
+  'Secure accounts, roles, and admin workflows',
+  'Payments, notifications, CRM, and logistics integrations',
+  'Cloud deployment, monitoring, and release setup',
+  'Stabilization and improvement of existing systems',
 ]
 
 export default function Services() {
@@ -58,9 +58,9 @@ export default function Services() {
               What you can hire ekansoft to build.
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted">
-              Practical software services for businesses — from customer-facing
-              websites and apps to backend systems, AI agents, and the
-              integrations that hold everything together.
+              Practical software services for businesses that need better
+              websites, internal tools, apps, integrations, automation, AI
+              systems, or technical support for existing platforms.
             </p>
           </div>
         </Container>
@@ -88,8 +88,9 @@ export default function Services() {
                 AI Chatbots &amp; Voice Agent Systems
               </h2>
               <p className="mt-4 text-lg leading-8 text-brand-soft">
-                The fastest-growing part of our work: AI systems that talk to
-                your customers — and know when to bring in a human.
+                AI systems can now handle real customer conversations, but they
+                still need clear business rules, reliable handoff paths, and
+                careful implementation.
               </p>
             </div>
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -124,8 +125,8 @@ export default function Services() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <SectionHeader
               eyebrow="Technical capability"
-              title="Engineering depth you can rely on."
-              intro="Beyond individual services, ekansoft brings senior engineering judgment: choosing the right architecture, keeping systems maintainable, and shipping software that holds up in production."
+              title="Engineering depth behind the business outcome."
+              intro="Behind every service is the technical work needed to make the software reliable, maintainable, secure, and ready for real users."
             />
             <div>
               <ul className="grid gap-3 sm:grid-cols-2">
@@ -151,7 +152,7 @@ export default function Services() {
       <section className="border-t border-border bg-surface-soft py-20">
         <Container className="text-center">
           <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-heading text-balance">
-            Not sure which service fits? Describe the problem — we&apos;ll suggest
+            Not sure which service fits? Describe the problem and we will suggest
             the right approach.
           </h2>
           <div className="mt-8">

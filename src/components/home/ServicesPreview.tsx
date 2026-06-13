@@ -15,8 +15,8 @@ export function ServicesPreview() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader
             eyebrow="What we do"
-            title="Software delivery across the systems your business depends on"
-            intro="From public websites to business logic APIs, automation, mobile tools, and AI agents, ekansoft focuses on software that fits the operation behind it"
+            title="Software delivery across the systems your business depends on."
+            intro="From customer-facing websites to internal tools, mobile apps, automation, and AI assistants, ekansoft builds practical software around the way your business actually operates."
           />
           <Link
             to="/services"
@@ -42,7 +42,9 @@ export function ServicesPreview() {
               <h3 className="mt-5 text-lg font-semibold text-heading group-hover:text-brand">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-muted">{service.summary}</p>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                {service.homeSummary ?? service.summary}
+              </p>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
                 Learn more
                 <ArrowRightIcon className="size-3.5 transition-transform group-hover:translate-x-0.5" />
