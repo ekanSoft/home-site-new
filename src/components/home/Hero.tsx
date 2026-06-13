@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useLayoutEffect, useRef, useState } from 'react'
 import { Button } from '../common/Button'
 import { Container } from '../common/Container'
 import { ArrowRightIcon } from '../common/icons'
@@ -9,7 +9,9 @@ const credibilityPoints = [
   'Honest scoping and reliable delivery',
 ]
 
-const heroImageSrc = '/images/hero-software-consulting.png'
+const heroImageSrc = '/images/hero-software-consulting.webp'
+const heroImageWidth = 960
+const heroImageHeight = 1200
 
 function PatternBlock({ x, y }: { x: number; y: number }) {
   return (
@@ -61,6 +63,15 @@ function HeroPattern() {
 }
 
 export function Hero() {
+  const imgRef = useRef<HTMLImageElement>(null)
+  const [imageReady, setImageReady] = useState(false)
+
+  useLayoutEffect(() => {
+    if (imgRef.current?.complete) {
+      setImageReady(true)
+    }
+  }, [])
+
   return (
     <section className="relative isolate overflow-hidden bg-surface">
       <div
@@ -96,11 +107,17 @@ export function Hero() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_70px_rgba(15,23,42,0.12)] ring-1 ring-border/70">
+            <div className="relative overflow-hidden rounded-2xl bg-brand-soft shadow-[0_24px_70px_rgba(15,23,42,0.12)] ring-1 ring-border/70">
               <img
+                ref={imgRef}
                 src={heroImageSrc}
                 alt="Illustrative software consulting workspace with app screens, code, and workflow diagrams"
-                className="aspect-[4/5] h-full w-full object-cover object-center lg:aspect-[5/6]"
+                width={heroImageWidth}
+                height={heroImageHeight}
+                fetchPriority="high"
+                decoding="sync"
+                onLoad={() => setImageReady(true)}
+                className={`aspect-[4/5] h-full w-full object-cover object-center lg:aspect-[5/6] ${imageReady ? 'opacity-100' : 'opacity-0'}`}
               />
             </div>
           </div>

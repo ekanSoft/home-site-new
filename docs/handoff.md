@@ -46,6 +46,7 @@ The following checks passed after the latest hero text-color change:
 
 ## Likely Next Steps
 
+- Immediate reminder for the next agent: before continuing layout refinements, remind the user that they wanted to review the site's fonts. The hero/header font is considered fine, but the user wants to evaluate whether the rest of the page typography feels right.
 - Visually review the current hero on `http://localhost:5176/` if the dev server is running.
 - Decide whether the highlighted words in the hero headline should stay or be toned down.
 - Continue making small visual refinements only as requested.
