@@ -42,3 +42,27 @@ The hero polygon background was inspired by Tailwind Plus Studio:
 - Avoid adding dependencies unless clearly necessary.
 - Use theme variables/classes for reusable colors and styling decisions where practical.
 - Run `pnpm.cmd lint` and `pnpm.cmd build` after frontend edits when feasible.
+- Functionality over cleverness.
+- Prefer simple, maintainable implementations.
+- Keep changes minimal and aligned with the existing style.
+- If requirements are ambiguous, ask a clarifying question first and wait for confirmation before implementing.
+- If a user prompt is framed as a question, do not implement; ALWAYS provide clarity and wait for explicit go-ahead. (IMPORTANT!!)
+
+## Agent conduct
+- Verify assumptions before executing commands; call out uncertainties first.
+- Only ask for clarification when the request is ambiguous, destructive, or risky.
+- Summarize intent before multi-step changes so the user can redirect early.
+- When citing documentation, quote exact lines and cite the source.
+- If the user's prompt is framed as a question or is exploratory/ambiguous, do not implement code; ALWAYS first clarify question to user or intent and wait for confirmation before implementing (IMPORTANT!!)
+- Do not run migrations. `npm run start:dev` does not run migrations; the user will verify work before migration. (IMPORTANT!!)
+- Use Superpowers only when it improves the task, especially for planning multi-step changes, debugging unclear issues, reviewing code, or verifying implementation before completion.
+- Do not use Superpowers for small/simple edits unless explicitly requested.
+- When using Superpowers, keep the implementation simple, avoid over-engineering, avoid unnecessary helper functions/abstractions, avoid excessive defensive runtime validation unless required, and follow the existing codebase style.
+
+## Required skills to apply:
+
+- frontend-design for the overall production-grade UI direction, visual hierarchy, spacing, typography, responsive layout, and polished consulting-site feel.
+- build-web-apps:frontend-app-builder for building the static Vite + React + TypeScript + Tailwind public website pages, reusable components etc
+- build-web-apps:react-best-practices for clean React architecture, component structure, routing, state where needed, data files, maintainability, and TypeScript correctness.
+- build-web-apps:frontend-testing-debugging for checking the completed UI, catching layout issues, console errors, broken routes, responsive regressions, and interaction problems.
+- browser:control-in-app-browser to open and inspect the local frontend in the browser, and to visually compare the implementation against the provided screenshots and reference links.
