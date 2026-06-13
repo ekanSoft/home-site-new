@@ -3,12 +3,6 @@ import { Button } from '../common/Button'
 import { Container } from '../common/Container'
 import { ArrowRightIcon } from '../common/icons'
 
-const credibilityPoints = [
-  'Founder-led, senior engineering',
-  'Web, mobile, backend & AI systems',
-  'Honest scoping and reliable delivery',
-]
-
 const heroImageSrc = '/images/hero-software-consulting.webp'
 const heroImageWidth = 960
 const heroImageHeight = 1200
@@ -37,7 +31,7 @@ function HeroPattern() {
   return (
     <svg
       aria-hidden="true"
-      className="absolute inset-x-0 -top-16 z-0 h-[1000px] w-full fill-white/70 stroke-heading/10 [mask-image:linear-gradient(to_bottom_left,black_34%,transparent_78%)]"
+      className="absolute inset-x-0 -top-16 z-0 h-[1000px] w-full fill-white/70 stroke-heading/10"
     >
       <rect width="100%" height="100%" fill={`url(#${id})`} strokeWidth="0" />
       <svg x="50%" y={yOffset} strokeWidth="0" className="overflow-visible">
@@ -122,18 +116,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Credibility / positioning strip */}
-        <dl className="mt-14 grid gap-6 border-t border-border pt-10 sm:grid-cols-3 lg:mt-16">
-          {credibilityPoints.map((point, index) => (
-            <div key={point} className="flex items-start gap-3">
-              <dt className="text-sm font-semibold text-brand">
-                {String(index + 1).padStart(2, '0')}
-              </dt>
-              <dd className="text-sm font-medium leading-6 text-heading">{point}</dd>
-            </div>
-          ))}
-        </dl>
       </Container>
     </section>
   )

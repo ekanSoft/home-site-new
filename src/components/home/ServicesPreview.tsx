@@ -10,13 +10,13 @@ const featured = featuredServiceSlugs
 
 export function ServicesPreview() {
   return (
-    <section className="bg-surface-soft py-24 sm:py-32">
+    <section className="bg-surface-soft pt-24 pb-10 sm:pt-32 sm:pb-12">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader
             eyebrow="What we do"
-            title="Software capability across the full stack."
-            intro="From customer-facing websites to backend systems and AI agents — we build the pieces and connect them properly."
+            title="Software delivery across the systems your business depends on"
+            intro="From public websites to business logic APIs, automation, mobile tools, and AI agents, ekansoft focuses on software that fits the operation behind it"
           />
           <Link
             to="/services"

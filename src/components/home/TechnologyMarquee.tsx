@@ -19,7 +19,10 @@ function MarqueeRow() {
 
 export function TechnologyMarquee() {
   return (
-    <section id="technologies" className="scroll-mt-20 border-y border-border bg-surface-soft py-16">
+    <section
+      id="technologies"
+      className="scroll-mt-20 border-b border-border bg-surface-soft pt-2 pb-20 sm:pt-4 sm:pb-24"
+    >
       <Container>
         <p className="text-center text-sm font-semibold uppercase tracking-widest text-brand">
           Technologies &amp; capabilities
