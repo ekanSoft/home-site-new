@@ -71,9 +71,13 @@ export function Hero() {
       <Container className="relative z-10 pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-16 lg:pb-28">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(380px,0.82fr)] lg:gap-16">
           <div className="max-w-3xl lg:max-w-2xl">
-            <h1 className="hero-display text-4xl font-semibold leading-[1.05] tracking-normal text-heading text-balance sm:text-6xl">
-              We build reliable software for businesses that need more than just a
-              website.
+            <p className="inline-flex items-center rounded-full bg-brand-soft px-4 py-1.5 text-sm font-semibold leading-6 text-brand-dark">
+              Software Consulting
+            </p>
+            <h1 className="hero-display mt-6 text-4xl font-semibold leading-[1.05] tracking-normal text-heading text-balance sm:text-6xl">
+              We build reliable <span className="text-brand-dark">software</span>{' '}
+              for <span className="text-brand-dark">businesses</span> that need
+              more than just a <span className="text-brand-dark">website</span>.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
               ekansoft helps businesses design, build, integrate, and scale web
