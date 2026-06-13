@@ -1,6 +1,5 @@
 import { usePageTitle } from '../hooks/usePageTitle'
 import { services } from '../data/services'
-import { technologies } from '../data/tech'
 import { Button } from '../components/common/Button'
 import { Container } from '../components/common/Container'
 import { SectionHeader } from '../components/common/SectionHeader'
@@ -140,9 +139,9 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-sm leading-6 text-muted">
+              {/* <p className="mt-6 text-sm leading-6 text-muted">
                 Working across {technologies.slice(0, 8).join(', ')}, and more.
-              </p>
+              </p> */}
             </div>
           </div>
         </Container>

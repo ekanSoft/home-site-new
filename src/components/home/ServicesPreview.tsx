@@ -15,7 +15,13 @@ export function ServicesPreview() {
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader
             eyebrow="What we do"
-            title="Software delivery across the systems your business depends on."
+            title={
+              <>
+                <span className="text-brand-dark">Software</span> delivery across
+                the systems your <span className="text-brand-dark">business</span>{' '}
+                depends on.
+              </>
+            }
             intro="From customer-facing websites to internal tools, mobile apps, automation, and AI assistants, ekansoft builds practical software around the way your business actually operates."
           />
           <Link
@@ -32,7 +38,7 @@ export function ServicesPreview() {
             <Link
               key={service.slug}
               to={`/services#${service.slug}`}
-              className={`group rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border transition hover:shadow-md hover:ring-brand/30 ${
+              className={`group rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(15,23,42,0.10)] hover:ring-brand/30 ${
                 index === 0 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >
