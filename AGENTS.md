@@ -15,11 +15,11 @@ This is the preferred/current ekansoft codebase. The site has already been gener
 
 The user prefers this current codebase overall, but wants refinements from the old/reference code where it is better. Past examples included the old navigation style, contact page spacing/copy, and footer layout.
 
-The user also referenced AAJ Express for visual tone:
+The user also referenced AAJ Express and oakslab for visual tone:
 
-- Site: `https://www.aajexpress.org/`
+- SiteS: `https://www.aajexpress.org/` and `https://www.oakslab.com/`
 - Use it as inspiration for a more polished, rounded/geometric hero feel, especially typography and the idea of a friendly hero image on the right.
-- Do not copy AAJ content or branding.
+- Do not copy AAJ/oakslab content or branding.
 
 The hero polygon background was inspired by Tailwind Plus Studio:
 
