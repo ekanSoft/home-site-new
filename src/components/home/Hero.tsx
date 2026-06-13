@@ -106,7 +106,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="relative mx-auto hidden w-full max-w-md lg:block lg:max-w-none">
             <div className="relative overflow-hidden rounded-2xl bg-brand-soft shadow-[0_24px_70px_rgba(15,23,42,0.12)] ring-1 ring-border/70">
               <img
                 ref={imgRef}
