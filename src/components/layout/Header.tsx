@@ -33,7 +33,7 @@ export function Header() {
   const location = useLocation()
 
   return (
-    <header className="sticky top-0 z-40 border-b border-transparent bg-white/90 py-3 backdrop-blur-xl">
+    <header className="font-display sticky top-0 z-40 border-b border-transparent bg-white/90 py-3 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <div className="flex lg:flex-1">
           <Brand />

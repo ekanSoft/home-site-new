@@ -17,7 +17,7 @@ type MobileNavProps = {
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
   return (
-    <Dialog open={open} onClose={onClose} className="lg:hidden">
+    <Dialog open={open} onClose={onClose} className="font-display lg:hidden">
       <div className="fixed inset-0 z-50 bg-heading/35 backdrop-blur-sm" aria-hidden="true" />
       <DialogPanel className="fixed inset-y-0 right-0 z-50 flex w-full max-w-md flex-col overflow-y-auto bg-white shadow-2xl">
         <div className="flex items-center justify-between border-b border-border px-5 py-4">

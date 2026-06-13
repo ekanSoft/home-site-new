@@ -45,7 +45,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const cls = [
-    'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors',
+    'font-display inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors',
     'focus-visible:outline-2 focus-visible:outline-offset-2',
     variantClasses[variant],
     sizeClasses[size],

@@ -88,7 +88,7 @@ export function Hero() {
             <h1 className="hero-display mt-6 text-4xl font-semibold leading-[1.05] tracking-normal text-heading text-balance sm:text-6xl">
               We build reliable <span className="text-brand-dark">software</span>{' '}
               for <span className="text-brand-dark">businesses</span> that need
-              more than just a <span className="text-brand-dark">website</span>.
+              more than just a <span className="text-brand-dark">website</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
               ekansoft helps businesses design, build, integrate, and scale web

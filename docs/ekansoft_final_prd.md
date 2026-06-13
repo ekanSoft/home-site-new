@@ -286,7 +286,7 @@ Required sections:
 
 Suggested hero copy:
 
-> We build reliable software for businesses that need more than just a website.
+> We build reliable software for businesses that need more than just a website
 >
 > ekansoft helps businesses design, build, integrate, and scale web platforms, mobile apps, backend systems, AI workflows, and automation tools.
 

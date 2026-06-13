@@ -29,7 +29,7 @@ export function Footer() {
             <div className="mt-6">
               <Link
                 to="/contact"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[color:var(--color-border)] bg-white px-5 text-sm font-semibold text-[var(--color-heading)] shadow-sm transition hover:border-[color:var(--color-brand)] hover:text-[var(--color-brand-dark)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)]"
+                className="font-display inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[color:var(--color-border)] bg-white px-5 text-sm font-semibold text-[var(--color-heading)] shadow-sm transition hover:border-[color:var(--color-brand)] hover:text-[var(--color-brand-dark)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand)]"
               >
                 <span>Get in touch</span>
                 <ArrowRightIcon className="size-4" />
