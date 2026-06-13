@@ -18,7 +18,7 @@ export function Process() {
           {processSteps.map((step) => (
             <li
               key={step.number}
-              className="rounded-2xl bg-surface p-6 shadow-sm ring-1 ring-border"
+              className="info-card-hover rounded-2xl bg-surface p-6 shadow-sm ring-1 ring-border hover:ring-brand/30"
             >
               <p className="text-sm font-bold text-brand">{step.number}</p>
               <h3 className="mt-3 text-lg font-semibold text-heading">{step.title}</h3>

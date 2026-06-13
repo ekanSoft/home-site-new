@@ -36,7 +36,7 @@ export function FounderCredibility() {
             {founderExperience.map((item) => (
               <li
                 key={item.companyOrDomain}
-                className="rounded-2xl bg-surface p-6 shadow-sm ring-1 ring-border"
+                className="info-card-hover rounded-2xl bg-surface p-6 shadow-sm ring-1 ring-border hover:ring-brand/30"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-semibold text-heading">{item.companyOrDomain}</h3>

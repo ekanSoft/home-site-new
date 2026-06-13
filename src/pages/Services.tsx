@@ -132,7 +132,7 @@ export default function Services() {
                 {capabilities.map((capability) => (
                   <li
                     key={capability}
-                    className="flex items-start gap-3 rounded-xl bg-surface-soft p-4 text-sm font-medium text-heading"
+                    className="info-card-hover flex items-start gap-3 rounded-xl bg-surface-soft p-4 text-sm font-medium text-heading"
                   >
                     <CheckIcon className="mt-0.5 size-4 flex-none text-accent" />
                     {capability}

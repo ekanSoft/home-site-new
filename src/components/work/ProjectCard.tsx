@@ -69,7 +69,7 @@ function CardBody({ project }: { project: WorkProject }) {
 
 export function ProjectCard({ project }: { project: WorkProject }) {
   const cardClasses =
-    'group flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm ring-1 ring-border transition hover:shadow-md hover:ring-brand/30'
+    'info-card-hover group flex flex-col overflow-hidden rounded-3xl bg-surface shadow-sm ring-1 ring-border hover:ring-brand/30'
 
   if (project.href) {
     return (

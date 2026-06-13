@@ -27,7 +27,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             className="flex items-center gap-2.5"
             aria-label={`${siteConfig.name} home`}
           >
-            <span className="flex size-8 items-center justify-center rounded-lg bg-brand text-base font-bold text-white">
+            <span className="flex size-8 items-center justify-center rounded-lg bg-heading text-base font-bold text-white">
               e
             </span>
             <span className="text-lg font-semibold tracking-tight text-heading">

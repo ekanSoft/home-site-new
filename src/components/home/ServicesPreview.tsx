@@ -38,7 +38,7 @@ export function ServicesPreview() {
             <Link
               key={service.slug}
               to={`/services#${service.slug}`}
-              className={`group rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(15,23,42,0.10)] hover:ring-brand/30 ${
+              className={`info-card-hover group rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border hover:ring-brand/30 ${
                 index === 0 ? 'sm:col-span-2 lg:col-span-1' : ''
               }`}
             >

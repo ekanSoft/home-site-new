@@ -5,7 +5,7 @@ export function ServiceCard({ service }: { service: Service }) {
   return (
     <article
       id={service.slug}
-      className="scroll-mt-24 rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border"
+      className="info-card-hover scroll-mt-24 rounded-3xl bg-surface p-8 shadow-sm ring-1 ring-border hover:ring-brand/30"
     >
       <span className="inline-flex size-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
         <ServiceIcon name={service.icon} className="size-6" />

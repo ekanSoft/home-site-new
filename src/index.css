@@ -31,6 +31,18 @@ body {
   font-family: var(--font-hero);
 }
 
+.info-card-hover {
+  transition-property: transform, box-shadow, border-color, color, background-color,
+    opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.info-card-hover:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1);
+}
+
 h1,
 h2,
 h3,
@@ -46,5 +58,13 @@ h4,
 
   .animate-marquee {
     animation: none;
+  }
+
+  .info-card-hover {
+    transition-duration: 0ms;
+  }
+
+  .info-card-hover:hover {
+    transform: none;
   }
 }
