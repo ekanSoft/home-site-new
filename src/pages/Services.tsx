@@ -3,30 +3,16 @@ import { services } from '../data/services'
 import { Button } from '../components/common/Button'
 import { Container } from '../components/common/Container'
 import { SectionHeader } from '../components/common/SectionHeader'
-import { CheckIcon } from '../components/common/icons'
+import { ArrowRightIcon, CheckIcon } from '../components/common/icons'
 import { ServiceCard } from '../components/services/ServiceCard'
 
-const aiHighlights = [
-  {
-    title: 'Customer support & sales bots',
-    description:
-      'Chatbots that answer common questions, collect useful details, qualify leads, and reduce repetitive support work.',
-  },
-  {
-    title: 'Voice agents & call flows',
-    description:
-      'Voice systems for booking, routing, follow-ups, and routine calls, with escalation when a person needs to step in.',
-  },
-  {
-    title: 'AI agents with guardrails',
-    description:
-      'AI assistants built with clear limits, structured outputs, business rules, and safe fallback paths.',
-  },
-  {
-    title: 'Human handoff workflows',
-    description:
-      'Escalation flows that give your team the conversation history and context needed to take over smoothly.',
-  },
+const aiSpotlightSummary =
+  'Customer support bots, sales assistants, voice agents, call flows, LLM-powered agents, and human handoff workflows.'
+
+const aiSpotlightOutcomes = [
+  'Support chatbots',
+  'Voice call flows',
+  'Human handoff workflows',
 ]
 
 const capabilities = [
@@ -40,6 +26,9 @@ const capabilities = [
 
 export default function Services() {
   usePageTitle('Services | ekansoft Software Consulting')
+  const aiService = services.find(
+    (service) => service.slug === 'ai-chatbots-voice-agents',
+  )
 
   return (
     <>
@@ -75,51 +64,52 @@ export default function Services() {
         </Container>
       </section>
 
-      {/* AI Chatbots & Voice Agents highlight */}
-      <section className="py-24 sm:py-32">
-        <Container>
-          <div id="ai-spotlight" className="rounded-3xl bg-brand-dark p-8 sm:p-14">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-                Spotlight
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white text-balance sm:text-4xl">
-                AI Chatbots &amp; Voice Agent Systems
-              </h2>
-              <p className="mt-4 text-lg leading-8 text-brand-soft">
-                AI systems can now handle real customer conversations, but they
-                still need clear business rules, reliable handoff paths, and
-                careful implementation.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2">
-              {aiHighlights.map((highlight) => (
-                <div
-                  key={highlight.title}
-                  className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10"
-                >
-                  <h3 className="font-semibold text-white">{highlight.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-brand-soft">
-                    {highlight.description}
-                  </p>
+      {aiService ? (
+        <section
+          id="ai-spotlight"
+          className="bg-heading py-20 text-white sm:py-24"
+        >
+          <Container>
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+                  Spotlight
+                </p>
+                <p className="mt-4 text-sm font-semibold text-brand-soft">
+                  AI chatbots &amp; voice agents
+                </p>
+                <h2 className="mt-6 text-3xl font-semibold leading-[1.08] sm:text-4xl lg:text-5xl">
+                  AI systems that connect to the real workflow behind the conversation.
+                </h2>
+                <p className="mt-6 text-base leading-7 text-white/75 sm:text-lg">
+                  The useful part is not just a chat window. It is the routing,
+                  context, escalation, integrations, transcripts, permissions, and
+                  reporting that make the assistant safe for customers and teams.
+                </p>
+              </div>
+              <div className="rounded-lg border border-white/10 bg-white/5 p-6">
+                <h3 className="text-2xl font-semibold">{aiService.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-white/75">
+                  {aiSpotlightSummary}
+                </p>
+                <div className="mt-6 grid gap-3">
+                  {aiSpotlightOutcomes.map((outcome) => (
+                    <div
+                      className="rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white"
+                      key={outcome}
+                    >
+                      {outcome}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-            <div className="mt-10">
-              <Button
-                to="/contact"
-                variant="secondary"
-                className="bg-white ring-0 hover:bg-brand-soft"
-              >
-                Discuss an AI project
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      ) : null}
 
       {/* Technical capability */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pt-20 pb-24 sm:pt-24 sm:pb-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <SectionHeader
@@ -148,16 +138,22 @@ export default function Services() {
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-border bg-surface-soft py-20">
-        <Container className="text-center">
-          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-heading text-balance">
-            Not sure which service fits? Describe the problem and we will suggest
-            the right approach.
-          </h2>
-          <div className="mt-8">
-            <Button to="/contact" size="lg">
-              Get in touch
-            </Button>
+      <section className="bg-white py-20 sm:py-24">
+        <Container>
+          <div className="rounded-lg border border-border bg-white px-6 py-10 text-center shadow-sm sm:px-10">
+            <h2 className="text-3xl font-semibold leading-[1.08] tracking-tight text-heading">
+              Not sure which service fits?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-muted">
+              Bring the business problem first. The exact shape can be scoped
+              after the constraints, users, timeline, and existing systems are clear.
+            </p>
+            <div className="mt-7">
+              <Button to="/contact" className="min-h-11 px-5">
+                <span>Start the conversation</span>
+                <ArrowRightIcon className="size-4" />
+              </Button>
+            </div>
           </div>
         </Container>
       </section>

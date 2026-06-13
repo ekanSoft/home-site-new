@@ -1,5 +1,65 @@
 # Handoff
 
+## Latest Update - June 13, 2026
+
+Current working direction: keep `C:\Users\PC\Documents\source-codes\ekan-soft-claude`
+as the source of truth and continue using the old/reference codebase only for selective
+visual ideas. Do not modify the old/reference codebase.
+
+Completed since the previous handoff:
+
+- Typography:
+  - The site now uses Urbanist as the display font for headings.
+  - The user tested Urbanist vs Poppins and chose Urbanist.
+- Header navigation:
+  - Resolved the desktop dropdown bug where multiple clicked dropdowns could remain open.
+  - Desktop dropdowns now use one controlled `openDropdown` state in `src/components/layout/Header.tsx`.
+  - Menus open on hover/focus, close on mouse leave/blur, and selecting a dropdown link closes the menu.
+  - Mobile navigation remains tap/disclosure based because there is no hover on mobile.
+- Hero/home layout:
+  - Removed the hero credibility strip with the `01 / 02 / 03` items.
+  - Kept the hero polygon treatment, but removed the fade/mask so the pattern cuts off cleanly at the section boundary.
+  - Moved `Technologies & Capabilities` directly after `What we do`, keeping both in the same soft section treatment.
+- Homepage services:
+  - Reworked service copy to be more business-owner-friendly.
+  - Added `homeSummary` to services so homepage cards can use simpler language while the full Services page can stay more detailed.
+  - The homepage services list now includes mobile apps again.
+  - The user has made manual copy edits in `src/data/services.ts`; preserve those edits.
+  - In the `What we do` heading, `Software` and `business` are highlighted with `text-brand-dark`, matching the hero highlight color.
+- Services page:
+  - Updated service summaries/details, AI spotlight copy, technical capability copy, and CTA copy.
+  - Replaced the final Services page CTA with the old/reference `Not sure which service fits?` card treatment and `Start the conversation` CTA.
+  - Replaced the AI Spotlight with the old/reference full-width dark Spotlight section and added a small `Spotlight` label above the AI kicker.
+  - Added top padding to the Technical capability section after the Spotlight (`pt-20 sm:pt-24`) so it is no longer tight against the dark Spotlight block.
+  - Removed an unused `technologies` import after the related paragraph was commented out.
+- Card interactions:
+  - Added shared `.info-card-hover` behavior in `src/index.css`.
+  - Applied the subtle hover lift/pop effect to standard neutral information cards:
+    homepage service cards, full Services page cards, process cards, How We Work cards, founder experience cards, project/case cards, and Services page capability items.
+  - Do not apply this hover behavior to colored CTA blocks or dark promotional cards.
+- How We Work:
+  - Kept the current section content and layout direction.
+  - Borrowed the old/reference dark card-header treatment:
+    `Model 01 - Project Delivery` and `Model 02 - Embedded Engineering Support`.
+  - Added the old/reference bottom divider text for each model.
+  - Replaced the previous bottom CTA with the old/reference dark centered CTA-card structure.
+  - Tested the old/reference grid background in two variations, then removed it. Final decision: no grid; keep the clean white background.
+- Logo/footer:
+  - Changed the logo mark color only.
+  - Header/mobile logo mark is now `bg-heading` with white text.
+  - Footer logo mark is inverted for contrast: white background with `text-heading`.
+  - Footer height was compared with the old version; padding is already equivalent. Any perceived height difference is content-driven, mostly because the current footer lists services rather than the shorter old navigation list.
+
+Verification passed after recent visual changes:
+
+- `pnpm.cmd lint`
+- `pnpm.cmd build`
+- Browser checks on `http://localhost:5176/` and `http://localhost:5176/services` showed no console errors.
+
+Next TODO:
+
+- Continue with the next user-directed visual refinement. Current known state: dropdown bug is resolved, Services page Spotlight/CTA have been matched to the old/reference implementation, and the Spotlight-to-Technical-capability spacing has been corrected.
+
 ## Starting Context
 
 The user started by explaining that this repository is the preferred/current ekansoft website implementation. A PRD exists at `docs/ekansoft_final_prd.md`, but it is only for overview/context. The task was not to implement new PRD features.

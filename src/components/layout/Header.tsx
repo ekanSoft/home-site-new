@@ -2,9 +2,14 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { siteConfig } from '../../config/site'
 import { headerCta, navItems } from '../../data/nav'
-import { ChevronDownIcon, MenuIcon } from '../common/icons'
+import { services } from '../../data/services'
+import { ChevronDownIcon, MenuIcon, ServiceIcon } from '../common/icons'
 import { Button } from '../common/Button'
 import { MobileNav } from './MobileNav'
+
+const serviceIconBySlug = new Map(
+  services.map((service) => [service.slug, service.icon] as const),
+)
 
 function Brand() {
   return (
@@ -30,6 +35,7 @@ function isActivePath(currentPath: string, href: string) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const location = useLocation()
 
   return (
@@ -45,45 +51,76 @@ export function Header() {
         >
           {navItems.map((item) =>
             item.children ? (
-              <details className="group relative" key={item.label}>
-                <summary className="flex min-h-10 cursor-pointer list-none items-center gap-1 rounded-full px-4 text-sm font-semibold text-heading transition hover:bg-surface-soft [&::-webkit-details-marker]:hidden">
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    setOpenDropdown(null)
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  aria-expanded={openDropdown === item.label}
+                  aria-haspopup="menu"
+                  onFocus={() => setOpenDropdown(item.label)}
+                  className="flex min-h-10 cursor-default items-center gap-1 rounded-full px-4 text-sm font-semibold text-heading transition hover:bg-surface-soft"
+                >
                   {item.label}
-                  <ChevronDownIcon className="size-4 transition group-open:rotate-180" />
-                </summary>
-                <div className="absolute left-1/2 top-full z-20 mt-3 w-[28rem] -translate-x-1/2 rounded-lg border border-border bg-white p-3 shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
-                  <div className="space-y-1">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        to={child.href}
-                        className={`grid grid-cols-[2.5rem_1fr] gap-3 rounded-lg p-3 transition ${
-                          isActivePath(location.pathname, child.href)
-                            ? 'bg-brand-soft'
-                            : 'hover:bg-surface-soft'
-                        }`}
-                      >
-                        <span className="grid size-10 place-items-center rounded-lg bg-surface-soft text-sm font-semibold text-brand-dark">
-                          {child.label.slice(0, 1)}
-                        </span>
-                        <span>
-                          <span className="block text-sm font-semibold text-heading">
-                            {child.label}
-                          </span>
-                          {child.description ? (
-                            <span className="mt-1 block text-sm leading-5 text-muted">
-                              {child.description}
+                  <ChevronDownIcon
+                    className={`size-4 transition ${
+                      openDropdown === item.label ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {openDropdown === item.label ? (
+                  <div className="absolute left-1/2 top-full z-20 w-[28rem] -translate-x-1/2 pt-3">
+                    <div className="rounded-lg border border-border bg-white p-3 shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+                      <div className="space-y-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            onClick={() => setOpenDropdown(null)}
+                            className="grid grid-cols-[2.5rem_1fr] gap-3 rounded-lg p-3 transition hover:bg-surface-soft"
+                          >
+                            <span className="grid size-10 place-items-center rounded-lg bg-surface-soft text-sm font-semibold text-brand-dark">
+                              {child.serviceSlug &&
+                              serviceIconBySlug.has(child.serviceSlug) ? (
+                                <ServiceIcon
+                                  name={serviceIconBySlug.get(child.serviceSlug)!}
+                                  className="size-5"
+                                />
+                              ) : (
+                                child.label.slice(0, 1)
+                              )}
                             </span>
-                          ) : null}
-                        </span>
-                      </Link>
-                    ))}
+                            <span>
+                              <span className="block text-sm font-semibold text-heading">
+                                {child.label}
+                              </span>
+                              {child.description ? (
+                                <span className="mt-1 block text-sm leading-5 text-muted">
+                                  {child.description}
+                                </span>
+                              ) : null}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </details>
+                ) : null}
+              </div>
             ) : (
               <Link
                 key={item.label}
                 to={item.href ?? '/'}
+                onFocus={() => setOpenDropdown(null)}
                 className={`flex min-h-10 items-center rounded-full px-4 text-sm font-semibold transition ${
                   item.href && isActivePath(location.pathname, item.href)
                     ? 'bg-brand-soft text-brand-dark'

@@ -79,7 +79,6 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <p>Static public UI. No form submission or backend integration wired.</p>
         </div>
       </div>
     </footer>

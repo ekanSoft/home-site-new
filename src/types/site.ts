@@ -96,6 +96,7 @@ export type NavLeaf = {
   label: string
   href: string
   description?: string
+  serviceSlug?: ServiceSlug
 }
 
 export type NavItem = {
