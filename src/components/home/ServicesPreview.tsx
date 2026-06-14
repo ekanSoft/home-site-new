@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { featuredServiceSlugs, services } from '../../data/services'
+import { Button } from '../common/Button'
 import { Container } from '../common/Container'
 import { SectionHeader } from '../common/SectionHeader'
 import { ArrowRightIcon, ServiceIcon } from '../common/icons'
@@ -12,26 +13,23 @@ export function ServicesPreview() {
   return (
     <section className="bg-surface-soft pt-24 pb-10 sm:pt-32 sm:pb-12">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeader
-            eyebrow="What we do"
-            title={
-              <>
-                <span className="text-brand-dark">Software</span> delivery across
-                the systems your <span className="text-brand-dark">business</span>{' '}
-                depends on.
-              </>
-            }
-            intro="From customer-facing websites to internal tools, mobile apps, automation, and AI assistants, ekansoft builds practical software around the way your business actually operates."
-          />
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-dark"
-          >
-            All services
-            <ArrowRightIcon className="size-4" />
-          </Link>
-        </div>
+        <SectionHeader
+          action={
+            <Button to="/services" variant="secondary" className="min-h-11 px-5">
+              All services
+              <ArrowRightIcon className="size-4" />
+            </Button>
+          }
+          eyebrow="What we do"
+          title={
+            <>
+              <span className="text-brand-dark">Software</span> delivery across the
+              systems your <span className="text-brand-dark">business</span> depends
+              on.
+            </>
+          }
+          intro="From customer-facing websites to internal tools, mobile apps, automation, and AI assistants, ekansoft builds practical software around the way your business actually operates."
+        />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((service, index) => (

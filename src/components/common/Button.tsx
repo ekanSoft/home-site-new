@@ -8,7 +8,7 @@ const variantClasses: Record<Variant, string> = {
   primary:
     'bg-brand text-white shadow-sm hover:bg-brand-dark focus-visible:outline-brand',
   secondary:
-    'bg-white text-heading ring-1 ring-inset ring-border hover:bg-surface-soft focus-visible:outline-brand',
+    'border border-border bg-white text-heading shadow-sm hover:border-brand hover:text-brand-dark focus-visible:outline-brand',
   ghost: 'text-brand hover:text-brand-dark focus-visible:outline-brand',
 }
 
@@ -45,7 +45,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const cls = [
-    'font-display inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors',
+    'font-display inline-flex items-center justify-center gap-2 rounded-full font-semibold transition',
     'focus-visible:outline-2 focus-visible:outline-offset-2',
     variantClasses[variant],
     sizeClasses[size],

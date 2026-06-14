@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 type SectionHeaderProps = {
+  action?: ReactNode
   eyebrow?: string
   title: ReactNode
   intro?: string
@@ -9,6 +10,7 @@ type SectionHeaderProps = {
 }
 
 export function SectionHeader({
+  action,
   eyebrow,
   title,
   intro,
@@ -28,6 +30,7 @@ export function SectionHeader({
         {title}
       </h2>
       {intro ? <p className="mt-4 text-lg leading-8 text-muted">{intro}</p> : null}
+      {action ? <div className="mt-6">{action}</div> : null}
     </div>
   )
 }

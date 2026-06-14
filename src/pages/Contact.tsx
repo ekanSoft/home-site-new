@@ -18,17 +18,17 @@ export default function Contact() {
         className="absolute inset-x-0 top-0 -z-10 h-96 bg-brand-soft opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent)]"
       />
       <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-14 lg:grid-cols-5 lg:gap-16 xl:gap-20">
-          <div className="lg:col-span-2">
-            <h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-normal text-heading text-balance sm:text-5xl lg:text-6xl">
+        <div className="grid gap-10 lg:grid-cols-5 lg:gap-16 xl:gap-20">
+          <div className="order-2 lg:order-1 lg:col-span-2">
+            <h1 className="hidden max-w-xl text-4xl font-semibold leading-[1.05] tracking-normal text-heading text-balance sm:text-5xl lg:block lg:text-6xl">
               Connect about the software you need to build.
             </h1>
-            <p className="mt-8 max-w-xl text-xl leading-9 text-muted">
+            <p className="mt-8 hidden max-w-xl text-xl leading-9 text-muted lg:block">
               Tell us what you&apos;re trying to build or fix. We&apos;ll reply with an
               honest take on scope, approach, and next steps. No pressure, no jargon.
             </p>
 
-            <div className="mt-12 space-y-9">
+            <div className="space-y-9 lg:mt-12">
               <div className="flex gap-5">
                 <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[14px] bg-brand-soft text-brand">
                   <EnvelopeIcon className="size-5" />
@@ -77,7 +77,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="order-1 lg:order-2 lg:col-span-3">
             <ContactForm />
           </div>
         </div>

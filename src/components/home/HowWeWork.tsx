@@ -1,32 +1,23 @@
 import { Button } from '../common/Button'
 import { Container } from '../common/Container'
-import { SectionHeader } from '../common/SectionHeader'
-import { ArrowRightIcon, CheckIcon } from '../common/icons'
+import { ArrowRightIcon } from '../common/icons'
 
 const models = [
   {
     label: 'Model 01',
     title: 'Project Delivery',
-    description:
-      'ekansoft owns a scoped project end-to-end — discovery, architecture, build, launch, and handover. You get a clear plan, honest timelines, and one accountable delivery partner.',
+    heading: 'We handle a scoped project end-to-end',
+    body:
+      'ekansoft can take a defined project from discovery through launch, covering the practical decisions around interface, backend, integrations, deployment, and handover.',
     footer: 'Useful when you need a clear delivery owner, not a loose list of tasks.',
-    points: [
-      'Full ownership from scoping to launch',
-      'Clear milestones and regular demos',
-      'Architecture and technology decisions handled',
-    ],
   },
   {
     label: 'Model 02',
     title: 'Embedded Engineering Support',
-    description:
-      'ekansoft joins your existing team to provide senior engineering support — contributing code, reviewing architecture, and raising the bar without long ramp-up time.',
-    footer: 'Senior contribution without pretending to be a large agency.',
-    points: [
-      'Senior engineering inside your team',
-      'Code, reviews, and architectural guidance',
-      'Flexible engagement as your needs change',
-    ],
+    heading: 'We strengthen your existing team',
+    body:
+      'ekansoft can work alongside your product or engineering team to provide senior implementation support, architecture direction, integration help, or delivery momentum.',
+    footer: 'Useful when your team needs experienced engineering support.',
   },
 ]
 
@@ -34,31 +25,32 @@ export function HowWeWork() {
   return (
     <section id="how-we-work" className="scroll-mt-20 py-24 sm:py-32">
       <Container>
-        <SectionHeader
-          eyebrow="How we work"
-          title="Two ways to work with us. One standard of delivery."
-          intro="Whether ekansoft owns a delivery stream end-to-end or supports your existing team, the goal is the same: clear decisions, senior engineering, and reliable delivery."
-        />
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold text-brand-dark">How we work</p>
+          <h2 className="mt-8 text-3xl font-semibold leading-[1.08] text-heading sm:text-4xl lg:text-5xl">
+            Two ways to work with us. One standard of delivery.
+          </h2>
+          <p className="mt-6 text-base leading-7 text-muted sm:text-lg">
+            Whether ekansoft owns a delivery stream end-to-end or supports your
+            existing team, the goal is the same: clear decisions, senior
+            engineering, and reliable delivery.
+          </p>
+        </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {models.map((model) => (
             <article
               key={model.label}
               className="info-card-hover flex flex-col rounded-3xl bg-surface p-6 shadow-sm ring-1 ring-border hover:ring-brand/30 sm:p-8"
             >
               <div className="rounded-xl bg-heading px-4 py-3 text-center text-sm font-semibold text-white">
-                {model.label} &middot; {model.title}
+                {model.title}
               </div>
-              <p className="mt-6 leading-7 text-muted">{model.description}</p>
-              <ul className="mt-6 mb-8 space-y-3">
-                {model.points.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm text-heading">
-                    <CheckIcon className="mt-0.5 size-4 flex-none text-accent" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-auto border-t border-border pt-5 text-sm font-semibold italic text-heading">
+              <h3 className="mt-6 text-xl font-semibold text-heading">
+                {model.heading}
+              </h3>
+              <p className="mt-4 text-sm leading-6 text-muted">{model.body}</p>
+              <p className="mt-6 border-t border-border pt-4 text-sm font-semibold italic text-heading">
                 {model.footer}
               </p>
             </article>
