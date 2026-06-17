@@ -15,9 +15,9 @@ export function FeaturedWork() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader
-            eyebrow="Selected work"
+            eyebrow="Our Public Projects"
             title="A look at recent public projects."
-            intro="A selection of freelance and contract projects we are able to share publicly."
+            intro="Freelance and contract projects we are able to share publicly."
           />
           <Link
             to="/work"

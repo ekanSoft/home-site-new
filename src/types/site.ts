@@ -36,11 +36,24 @@ export type ProjectCategory =
   | 'web-platform'
   | 'business-website'
 
+export type ProjectSlug =
+  | 'belles-fleurs-flowers'
+  | 'jw-smyth-butchers'
+  | 'parking-ireland'
+  // | 'custom-coins'
+  // | 'mums-and-babies-ireland'
+  // | 'coffeeshop-ie'
+  // | 'jim-crowley-craft-butchers'
+  // | 'katies-kombucha'
+  // | 'rossan-knitwear'
+  // | 'industrial-temperature-sensors'
+  // | 'irish-dance-dublin'
+
 export type ProjectSource = 'freelance-contract' | 'employment-experience'
 
 export type WorkProject = {
   title: string
-  slug: string
+  slug: ProjectSlug
   category: ProjectCategory
   summary: string
   image: string

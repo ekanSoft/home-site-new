@@ -26,12 +26,19 @@ function CardBody({ project }: { project: WorkProject }) {
     <>
       <div className="overflow-hidden rounded-t-3xl">
         {project.image ? (
-          <img
-            src={project.image}
-            alt={`Screenshot of the ${project.title} website`}
-            className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-            loading="lazy"
-          />
+          <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+            <img
+              src={project.image}
+              alt={`Screenshot of the ${project.title} website`}
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-heading/18 to-transparent"
+            />
+          </div>
         ) : (
           <ProjectPlaceholder title={project.title} />
         )}
