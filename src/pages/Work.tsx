@@ -9,28 +9,23 @@ export default function Work() {
 
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-brand-soft/60 to-surface"
-        />
+      <section className="relative overflow-hidden bg-heading text-white">
         <Container className="py-20 sm:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+            <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
               Selected work
             </p>
-            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-heading text-balance sm:text-5xl">
-              Public freelance &amp; contract projects.
+            <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white text-balance sm:text-5xl">
+              Freelance, Contract &amp; Professional Projects.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-muted">
-              A selection of projects we&apos;re able to share publicly. Screenshots
-              and live links are being added as assets are collected.
+            <p className="mt-6 text-lg leading-8 text-white/75">
+              Selected projects from freelance engagements, contract roles, and employment that we’re able to share publicly.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="bg-surface-soft py-20 sm:py-24">
+      <section className="bg-slate-100 py-20 sm:py-24">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
