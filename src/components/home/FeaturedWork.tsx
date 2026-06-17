@@ -11,7 +11,7 @@ const featured = featuredProjectSlugs
 
 export function FeaturedWork() {
   return (
-    <section className="bg-gradient-to-br from-slate-100 via-sky-100/80 to-cyan-100 py-24 sm:py-32">
+    <section className="bg-[#e8f1f7] py-24 sm:py-32">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeader

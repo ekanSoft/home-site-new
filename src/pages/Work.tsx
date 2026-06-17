@@ -25,7 +25,7 @@ export default function Work() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-br from-slate-100 via-sky-100/80 to-cyan-100 py-20 sm:py-24">
+      <section className="bg-[#e8f1f7] py-20 sm:py-24">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (

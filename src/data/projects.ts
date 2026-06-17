@@ -22,17 +22,6 @@ export const projects: WorkProject[] = [
     tags: ['E-commerce', 'Online ordering', 'Delivery'],
   },
   {
-    title: 'J.W. Smyth Family Butchers',
-    slug: 'jw-smyth-butchers',
-    category: 'ecommerce-website',
-    summary:
-      'Online butcher e-commerce site with product categories, rewards messaging, cart flow, delivery information, and ready-to-order meat selections.',
-    image: '/images/projects/jwsmyth.jpg',
-    href: 'https://jwsmythbutchers.ie/',
-    source: 'freelance-contract',
-    tags: ['E-commerce', 'Online store', 'Food & retail'],
-  },
-  {
     title: 'Parking Ireland',
     slug: 'parking-ireland',
     category: 'business-website',
@@ -42,6 +31,17 @@ export const projects: WorkProject[] = [
     href: 'https://www.parkingireland.ie/',
     source: 'freelance-contract',
     tags: ['Association', 'Membership', 'Industry Body'],
+  },
+  {
+    title: 'J.W. Smyth Family Butchers',
+    slug: 'jw-smyth-butchers',
+    category: 'ecommerce-website',
+    summary:
+      'Online butcher e-commerce site with product categories, rewards messaging, cart flow, delivery information, and ready-to-order meat selections.',
+    image: '/images/projects/jwsmyth.jpg',
+    href: 'https://jwsmythbutchers.ie/',
+    source: 'freelance-contract',
+    tags: ['E-commerce', 'Online store', 'Food & retail'],
   },
   // {
   //   title: 'Custom Coins',
